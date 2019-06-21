@@ -11,5 +11,9 @@
   "three": {
     "path": "./src/page/three/three.js",
     "title": "第三个页面"
+  },
+  "mapList": {
+    "path": "./src/page/mapList/mapList.js",
+    "title": "自定义地图"
   }
 }
