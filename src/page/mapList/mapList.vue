@@ -1,13 +1,15 @@
 <template>
-    <div class="contact-us">
-        地图页面
+    <div class="map-list">
+        <CustomizeMapTemplate ref="customizeMapTemplate"></CustomizeMapTemplate>
     </div>
 </template>
 <script>
+     import CustomizeMapTemplate from "@/components/mapList/customizeMapTemplate.vue";
     export default {
-        name: 'contactUs',
-        components: {
+        components:{
+            CustomizeMapTemplate
         },
+        name: 'map-list',
         data() {
             return {
             }
@@ -23,12 +25,12 @@
 
 <style lang="less" scoped>
     @import '../../less/variable.less';
-    .contact-us {
-        width: 100%;
-        overflow: hidden;
-        height: 500px;
+
+    .map-list {
+        min-height: 100%;
         background: @bgColor;
-        color: @fontColor;
+        padding: 100px;
+        box-sizing: border-box;
     }
 </style>
 
