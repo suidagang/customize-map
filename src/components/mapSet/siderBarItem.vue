@@ -28,11 +28,11 @@
 			</el-link>
 		</div> -->
 		<el-menu-item index="newLayer" class="submenu-title-noDropdown" >
-			<i class="el-icon-delete"></i>
+			<i class="el-icon-shopping-cart-full"></i>
 			<span slot="title">我的图层</span>
-			<i class="el-icon-circle-plus-outline delete-icon" @click.stop.prevent="openAddModal"></i>
+			<i class="el-icon-plus delete-icon" @click.stop.prevent="openAddModal"></i>
 		</el-menu-item>
-		<div v-for="(obj,num) in layerList" v-bind:key="num + '-num'">
+		<div v-for="(obj,num) in layerList" class="my-layer" v-bind:key="num + '-num'">
 			<el-menu-item :index="obj.name" class="submenu-title-noDropdown" :class="{ active:obj.active}" v-if="obj.children.length<=0" @click="goRouter(obj,true)">
 				<i class="el-icon-share" @click.stop.prevent="hideCustomizeLayer(obj,obj.show)" v-show="obj.show"></i>
 				<i class="el-icon-delete" @click.stop.prevent="hideCustomizeLayer(obj,obj.show)" v-show="!obj.show"></i>
@@ -232,7 +232,8 @@
 		color: #fff;
 	}
 	.active {
-		background: skyblue !important;
+		border: 1px solid #4c61ee;
+        box-shadow: 0px 0px 2px #4c61ee;
 	}
 	.new-layer {
 		height: 40px;

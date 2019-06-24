@@ -10,7 +10,7 @@
 			<div style="height:2000px;width:100px;"></div>
 		</div>
 		<NewLayerModal ref="newLayerModal" @sureChoiceTemplate="sureChoiceTemplate"></NewLayerModal>
-		<MapSpecificSettings ref="mapSpecificSettings" class="map-set-box" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapSpecificSettings>
+		<MapSpecificSettings ref="mapSpecificSettings" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapSpecificSettings>
 		<MapTemplateGroup ref="mapTemplateGroup" @confirmGroupChoiceTem = "confirmGroupChoiceTem"></MapTemplateGroup>
 		<MapSet ref="mapSet"></MapSet>
 	</div>
@@ -97,9 +97,7 @@
 		background: pink;
 		overflow: hidden;
 	}
-	.map-set-box{
-		position: fixed;
-		top: 0;
-		left: 280px;
+	.side-bar-box{
+		padding-bottom: 100px;
 	}
 </style>
