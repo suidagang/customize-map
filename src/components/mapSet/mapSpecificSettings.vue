@@ -6,6 +6,13 @@
 			<span>新建分组</span>
 		</div>
 		<div class="groups" v-for="(item, index) in groupList" :key="index" @click="goSet">
+			<div class="group-header">
+				<i class="el-icon-water-cup save-icon"></i>
+				<i class="el-icon-delete close-icon"></i>
+			</div>
+			<div class="temp-img"></div>
+			<div class="grup-name">点视图</div>
+			<div class="level-name">层级13-17</div>
 		</div>
 		<div class="padd100"></div>
 	</div>
@@ -44,7 +51,7 @@
 				this.groupList.push({});
 			},
 			goSet() {
-				// this.$emit("showSet");
+				this.$emit("showSet");
 			}
 		}
 	};
@@ -63,7 +70,13 @@
 	.map-set::-webkit-scrollbar {
 		display: none;
 	}
-
+	.save-icon{
+		position: absolute;
+		left: 8px;
+		top: 8px;
+		font-size: 18px;
+		color: #fff;
+	}
 	.close-icon {
 		position: absolute;
 		top: 8px;
@@ -73,7 +86,7 @@
 	}
 	.groups {
 		position: relative;
-		height: 114px;
+		/* height: 114px; */
 		width: 100px;
 		margin: 6px auto;
 		border: 1px solid #2f3245;
@@ -99,6 +112,29 @@
 	.padd100{
 		height: 100px;
 		width: 100%;
+	}
+	.group-header{
+		position: relative;
+		height: 30px;
+		overflow: hidden;
+		width: 100%;
+	}
+	.temp-img{
+		height: 56px;
+		width: 88px;
+		background: orange;
+		margin: 0 auto;
+	}
+	.grup-name{
+		color: #fff;
+		font-size: 12px;
+		margin-left: 5px;
+		margin-top: 5px;
+	}
+	.level-name{
+		color: #6d6f7b;
+		font-size: 12px;
+		margin: 5px;
 	}
 </style>
 

@@ -7,12 +7,19 @@
 			</el-menu>
 		</div>
 		<div class="main-map">
-			<div style="height:2000px;width:100px;"></div>
+			<div style="height:200px;width:100%;background:red;"></div>
+			<div style="height:200px;width:100%;background:orange;"></div>
+			<div style="height:200px;width:100%;background:yellow;"></div>
+			<div style="height:200px;width:100%;background:green;"></div>
+			<div style="height:200px;width:100%;background:blue;"></div>
+			<div style="height:200px;width:100%;background:purple;"></div>
+			<div style="height:200px;width:100%;background:pink;"></div>
+			<div style="height:200px;width:100%;background:skyblue;"></div>
 		</div>
 		<NewLayerModal ref="newLayerModal" @sureChoiceTemplate="sureChoiceTemplate"></NewLayerModal>
 		<MapSpecificSettings ref="mapSpecificSettings" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapSpecificSettings>
 		<MapTemplateGroup ref="mapTemplateGroup" @confirmGroupChoiceTem = "confirmGroupChoiceTem"></MapTemplateGroup>
-		<MapSet ref="mapSet"></MapSet>
+		<MapDetaileSet ref="mapDetaileSet"></MapDetaileSet>
 	</div>
 </template>
 
@@ -21,7 +28,7 @@
 	import NewLayerModal from "@/components/mapSet/newLayerModal.vue";
 	import MapSpecificSettings from "@/components/mapSet/mapSpecificSettings.vue";
 	import MapTemplateGroup from "@/components/mapSet/mapTemplateGroup.vue";
-	import MapSet from "@/components/mapSet/mapSet.vue";
+	import MapDetaileSet from "@/components/mapSet/mapDetaileSet.vue";
 	import TopNavBar from "@/components/mapSet/topNavBar.vue"
 	export default {
 		components: {
@@ -29,7 +36,7 @@
 			NewLayerModal,
 			MapSpecificSettings,
 			MapTemplateGroup,
-			MapSet,
+			MapDetaileSet,
 			TopNavBar
 		},
 		data() {
@@ -42,7 +49,7 @@
 		methods: {
 			closeSet() {
 				this.$refs.siderBarItem.clearActive();
-				this.$refs.mapSet.close();
+				this.$refs.mapDetaileSet.close();
 			},
 			openModal() {
 				this.$refs.mapSpecificSettings.open();
@@ -61,7 +68,7 @@
 				this.$refs.mapSpecificSettings.addGroup()
 			},
 			showSet(){
-				this.$refs.mapSet.open()
+				this.$refs.mapDetaileSet.open()
 			}
 		}
 	};
