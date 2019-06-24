@@ -15,5 +15,9 @@
   "mapList": {
     "path": "./src/page/mapList/mapList.js",
     "title": "自定义地图"
+  },
+  "mapSet": {
+    "path": "./src/page/mapSet/mapSet.js",
+    "title": "地图设置"
   }
 }
