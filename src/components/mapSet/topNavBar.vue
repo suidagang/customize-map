@@ -1,6 +1,6 @@
 <template>
     <div class="nav-top">
-        <div class="go-back"></div>
+        <div class="go-back" @click="goBack"></div>
         <div class="map-name" v-show="!isEdit">{{name}}</div>
         <input class="map-name-text" type="text" v-show="isEdit" v-model="name"/>
         <div class="icon-style">
@@ -29,6 +29,9 @@
             },
             saveName(){
                 this.isEdit = false;
+            },
+            goBack(){
+                window.location = "./mapList.html"
             }
         }
     }

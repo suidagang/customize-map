@@ -5,12 +5,11 @@
             <div class="list-sub-box" v-for="(item,index) in listData" :key="index" @mouseover="showChoiceTem (item) " @mouseout="outStyle(item)" :class="{ active: item.show }">
                 <div class="img-box">
                     <img src="@/asset/img/tem1.jpg" class="sys-img">
-                    <div class="use-tem" v-show="item.show">使用该模板</div>
+                    <div class="use-tem" v-show="item.show" @click="goMapSet">使用该模板</div>
                 </div>
                 <div class="template-name">{{item.name}}</div>
             </div>
         </div>
-         <el-color-picker class="color-style" v-model="value"></el-color-picker>
     </div>
 </template>
 
@@ -19,7 +18,6 @@
         name: "customize-map",
         data () {
             return {
-                value:"#000000",
                 listData:[{
                     name:"标准",
                     img:"",
@@ -55,6 +53,9 @@
             },
             outStyle(item){
                 item.show = false;
+            },
+            goMapSet(){
+                window.location = "./mapSet.html"
             }
         }
     };
