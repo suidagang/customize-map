@@ -16,7 +16,8 @@ import {
   Link,
   dialog,
   ColorPicker,
-  Slider
+  Slider,
+  Tree
 } from 'element-ui';
 Vue.use(Button);
 Vue.use(Select);
@@ -30,6 +31,7 @@ Vue.use(Link);
 Vue.use(dialog);
 Vue.use(ColorPicker);
 Vue.use(Slider);
+Vue.use(Tree);
 //封装axios  ajax请求
 import {post,fetch} from '@/axios/api'
 //定义全局变量
