@@ -3,7 +3,7 @@
         <div class="box">
             <div class="lable-style">{{objs.lable}}</div>
             <select v-model="objs.value"  placeholder="请选择" class="select-box" @change="changeSelect($event.target.value)" @blur="blurSelect($event.target.value)" @focus="focusSelect($event.target.value)">
-                <option  v-for="item in objs.options" :key="item" :value="item" >{{item}}</option >
+                <option  v-for="item in objs.options" :key="item" :value="item" class="option-style">{{item}}</option >
             </select>
         </div>
     </div>
@@ -42,7 +42,8 @@
     }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+    @import '../../less/variable.less';
     .box {
         display: flex;
         overflow: hidden;
@@ -60,5 +61,14 @@
         height: 24px;
         width: 142px;
         line-height: 24px;
+        background: @blackColor;
+        border: 0;
+        outline: none;
+        color: #fff;
+        padding: 0 3px;
+    }
+    .option-style{
+        background: @fontGrey;
+        color: #fff;
     }
 </style>

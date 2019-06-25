@@ -124,7 +124,7 @@
     }
     .close-icon {
         position: absolute;
-        top: 8px;
+        top: 12px;
         right: 8px;
         color: #fff;
         font-size: 18px;
