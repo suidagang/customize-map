@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box">
+        <div class="select-set">
             <div class="lable-style">{{objs.lable}}</div>
             <select v-model="objs.value"  placeholder="请选择" class="select-box" @change="changeSelect($event.target.value)" @blur="blurSelect($event.target.value)" @focus="focusSelect($event.target.value)">
                 <option  v-for="item in objs.options" :key="item" :value="item" class="option-style">{{item}}</option >
@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: "login",
+        name: "select-set",
         data() {
             return {
             }
@@ -44,7 +44,7 @@
 
 <style lang="less" scoped>
     @import '../../less/variable.less';
-    .box {
+    .select-set {
         display: flex;
         overflow: hidden;
         padding: 5px 0 ;
@@ -66,9 +66,11 @@
         outline: none;
         color: #fff;
         padding: 0 3px;
+        cursor: pointer;
     }
     .option-style{
         background: @fontGrey;
         color: #fff;
+        cursor: pointer;
     }
 </style>

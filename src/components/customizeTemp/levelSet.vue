@@ -48,7 +48,8 @@
     }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+    @import '../../less/variable.less';
     .level-set {
         overflow: hidden;
         margin: 20px 18px 0px 18px;

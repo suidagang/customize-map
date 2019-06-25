@@ -1,7 +1,7 @@
 <!-- input组件 -->
 <template>
     <div>
-        <div class="box">
+        <div class="color-set">
             <div  class="lable-style">{{objs.lable}}</div>
             <input :value="value" :placeholder="objs.placeholder" class="input-style" :disabled="objs.disabled" :name="objs.name" @input="$emit('input',$event.target.value)" @focus="focusEmit($event.target.value)" @blur="blurEmit($event.target.value)"></input>
         </div>
@@ -13,7 +13,7 @@
         isBoolean
     } from 'util';
     export default {
-        name: "login",
+        name: "color-set",
         data() {
             return {
             }
@@ -37,8 +37,9 @@
     }
 </script>
 
-<style scoped>
-    .box {
+<style lang="less" scoped>
+    @import '../../less/variable.less';
+    .color-set {
         display: flex;
         overflow: hidden;
         padding: 5px 0;

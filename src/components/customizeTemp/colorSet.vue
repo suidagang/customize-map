@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box">
+        <div class="color-set">
             <div class="lable-style">{{objs.lable}}</div>
             <div class="color-box">
                 <el-color-picker class="color-style" v-model="objs.value"></el-color-picker>
@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        name: "login",
+        name: "color-set",
         data() {
             return {
             }
@@ -23,28 +23,14 @@
                 required: true
             }
         },
-        computed:{
-            test(){
-                console.log(objs.options,'options');
-                return ''
-            }
-        },
         methods: {
-            changeSelect(val){
-                this.$emit("change",val)
-            },
-            blurSelect(val){
-                this.$emit("blur",val)
-            },
-            focusSelect(val){
-                this.$emit("focus",val)
-            }
         }
     }
 </script>
 
-<style scoped>
-    .box {
+<style lang="less" scoped>
+    @import '../../less/variable.less';
+    .color-set {
         display: flex;
         overflow: hidden;
         padding: 5px 0 ;

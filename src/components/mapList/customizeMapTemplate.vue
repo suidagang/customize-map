@@ -10,6 +10,7 @@
                 <div class="template-name">{{item.name}}</div>
             </div>
         </div>
+         <el-color-picker class="color-style" v-model="value"></el-color-picker>
     </div>
 </template>
 
@@ -18,6 +19,7 @@
         name: "customize-map",
         data () {
             return {
+                value:"#000000",
                 listData:[{
                     name:"标准",
                     img:"",

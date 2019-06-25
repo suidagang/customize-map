@@ -8,7 +8,6 @@
             <InputSet v-if=" item.type == 'input'" :objs='item' v-model="item.value" @input="inputTest" @focus="inputFocus" @blur="inputBlur"></InputSet>
             <SelectSet v-if=" item.type == 'select'" :objs="item" v-model="item.value" @change="changeSelect(item)" @blur="blurInput"></SelectSet>
             <ColorSet v-if="item.type == 'color' " :objs="item"></ColorSet>
-            <SelectSetNew v-if="item.type == 'new'" :objs="item"></SelectSetNew>
             <TitleSet v-if="item.type == 'title'" :objs="item"></TitleSet>
             <LevelSet v-if="item.type == 'level'"  :objs="item"></LevelSet>
             <UploadImgSet v-if="item.type == 'uploadImg'" :objs="item"></UploadImgSet>
@@ -20,7 +19,6 @@
     import InputSet from "@/components/customizeTemp/inputSet.vue";
     import SelectSet from "@/components/customizeTemp/selectSet.vue"
     import ColorSet from "@/components/customizeTemp/colorSet.vue"
-    import SelectSetNew from "@/components/customizeTemp/selectSetNew.vue"
     import TitleSet from "@/components/customizeTemp/titleSet.vue"
     import LevelSet from "@/components/customizeTemp/levelSet.vue"
     import UploadImgSet from "@/components/customizeTemp/uploadImgSet.vue"
@@ -30,7 +28,6 @@
             InputSet,
             SelectSet,
             ColorSet,
-            SelectSetNew,
             TitleSet,
             LevelSet,
             UploadImgSet
@@ -133,7 +130,7 @@
                         name:"层级设置",
                         value:[2,8],
                         max:24,
-                    }
+                    },
                 ],
                 inputvalue: "12"
             }
@@ -191,6 +188,7 @@
         background: #202133;
         overflow-y: auto;
         border-left: 1px solid @borderColor;
+        z-index: 222;
     }
     
     .map-set::-webkit-scrollbar {
@@ -202,6 +200,7 @@
         right: 8px;
         color: #fff;
         font-size: 18px;
+        cursor: pointer;
     }
     .detail-name {
         position: relative;

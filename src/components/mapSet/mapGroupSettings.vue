@@ -66,6 +66,7 @@
 		width: 120px;
 		height: 100%;
 		overflow-y: auto;
+		z-index: 222;
 	}
 	.map-set::-webkit-scrollbar {
 		display: none;
@@ -76,6 +77,7 @@
 		top: 8px;
 		font-size: 18px;
 		color: #fff;
+		cursor: pointer;
 	}
 	.close-icon {
 		position: absolute;
@@ -83,6 +85,7 @@
 		right: 8px;
 		color: #fff;
 		font-size: 18px;
+		cursor: pointer;
 	}
 	.groups {
 		position: relative;
@@ -91,6 +94,7 @@
 		margin: 6px auto;
 		border: 1px solid #2f3245;
 		box-sizing: border-box;
+		cursor: pointer;
 	}
 	.add-icon {
 		position: absolute;
@@ -108,6 +112,7 @@
 		margin: 40px auto 6px;
 		color: #757c98;
 		box-sizing: border-box;
+		cursor: pointer;
 	}
 	.padd100{
 		height: 100px;

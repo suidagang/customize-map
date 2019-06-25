@@ -10,7 +10,7 @@
 			<MyMap ref="myMap"></MyMap>
 		</div>
 		<NewLayerModal ref="newLayerModal" @sureChoiceTemplate="sureChoiceTemplate"></NewLayerModal>
-		<MapSpecificSettings ref="mapSpecificSettings" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapSpecificSettings>
+		<MapGroupSettings ref="mapGroupSettings" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapGroupSettings>
 		<MapTemplateGroup ref="mapTemplateGroup" @confirmGroupChoiceTem = "confirmGroupChoiceTem"></MapTemplateGroup>
 		<MapDetaileSet ref="mapDetaileSet"></MapDetaileSet>
 	</div>
@@ -19,7 +19,7 @@
 <script>
 	import SidebarItem from "@/components/mapSet/siderBarItem.vue";
 	import NewLayerModal from "@/components/mapSet/newLayerModal.vue";
-	import MapSpecificSettings from "@/components/mapSet/mapSpecificSettings.vue";
+	import MapGroupSettings from "@/components/mapSet/mapGroupSettings.vue";
 	import MapTemplateGroup from "@/components/mapSet/mapTemplateGroup.vue";
 	import MapDetaileSet from "@/components/mapSet/mapDetaileSet.vue";
 	import TopNavBar from "@/components/mapSet/topNavBar.vue"
@@ -28,7 +28,7 @@
 		components: {
 			SidebarItem,
 			NewLayerModal,
-			MapSpecificSettings,
+			MapGroupSettings,
 			MapTemplateGroup,
 			MapDetaileSet,
 			TopNavBar,
@@ -47,7 +47,7 @@
 				this.$refs.mapDetaileSet.close();
 			},
 			openModal() {
-				this.$refs.mapSpecificSettings.open();
+				this.$refs.mapGroupSettings.open();
 			},
 			openNewLayerModal() {
 				this.$refs.newLayerModal.open();
@@ -60,7 +60,7 @@
 				this.$refs.mapTemplateGroup.open();
 			},
 			confirmGroupChoiceTem(){
-				this.$refs.mapSpecificSettings.addGroup()
+				this.$refs.mapGroupSettings.addGroup()
 			},
 			showSet(){
 				this.$refs.mapDetaileSet.open()
@@ -96,7 +96,6 @@
 	.main-map {
 		margin-left: 280px;
 		min-height: 100%;
-		z-index: 9999;
 		overflow: hidden;
 	}
 	.side-bar-box{

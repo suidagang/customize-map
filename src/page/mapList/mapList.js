@@ -1,6 +1,10 @@
 import Vue from "vue";
 import App from "./mapList.vue";
 import "@/less/common.less";
+import {
+  ColorPicker
+} from 'element-ui';
+Vue.use(ColorPicker);
 //封装axios  ajax请求
 import {post,fetch} from '@/axios/api'
 //定义全局变量
