@@ -13,6 +13,7 @@
             <LevelSet v-if="item.type == 'level'"  :objs="item"></LevelSet>
             <UploadImgSet v-if="item.type == 'uploadImg'" :objs="item"></UploadImgSet>
         </div>
+        <div class="padding-style"></div>
     </div>
 </template>
 <script>
@@ -37,42 +38,103 @@
         data() {
             return {
                 isShowSetting: false,
-                list: [{
-                    type: "select",
-                    value: 1,
-                    options: [1, 2, 3, 4],
-                    lable: "字体大小",
-                    placeholder: "请选择"
-                }, {
-                    type: "input",
-                    value: '22',
-                    lable: "宽度",
-                    placeholder: "请输入"
-                },
-                {
-                    type:"title",
-                    name:"图片设置",
-                    icon:"el-icon-paperclip"
-                },
-                {
-                    type:"uploadImg",
-                    lable:"图片上传",
-                    value:"投诉点"
-                },
-                {
-                    type: "color",
-                    value: '#EE0E0E',
-                    lable: "字体颜色",
-                },{
-                    type:"title",
-                    name:"层级设置",
-                    icon:"el-icon-document-copy"
-                },{
-                    type:"level",
-                    name:"层级设置",
-                    value:[2,8],
-                    max:24,
-                },],
+                list:[
+                    {
+                        type:"title",
+                        name:"颜色设置",
+                        icon:"el-icon-paperclip"
+                    },
+                    {
+                        type: "color",
+                        value: '#EE0E0E',
+                        lable: "颜色",
+                    },
+                    {
+                        type:"title",
+                        name:"字体设置",
+                        icon:"el-icon-paperclip"
+                    },
+                    {
+                        type:"uploadImg",
+                        lable:"文字预览",
+                        value:"投诉点"
+                    },
+                    {
+                        type: "select",
+                        value: 12,
+                        options: [12, 14, 16, 18],
+                        lable: "字体大小",
+                        placeholder: "请选择"
+                    },
+                    {
+                        type: "color",
+                        value: '#EE0E0E',
+                        lable: "字体颜色",
+                    },
+                    {
+                        type: "select",
+                        value: "黑体",
+                        options: ['黑体', '宋体', '楷书', '幼圆'],
+                        lable: "字体样式",
+                        placeholder: "请选择"
+                    },
+                    {
+                        type:"title",
+                        name:"图片设置",
+                        icon:"el-icon-paperclip"
+                    },
+                    {
+                        type:"uploadImg",
+                        lable:"图片上传",
+                        value:"投诉点"
+                    },
+                     {
+                        type: "input",
+                        value: '22',
+                        lable: "宽度",
+                        placeholder: "请输入"
+                    },
+                     {
+                        type: "input",
+                        value: '22',
+                        lable: "高度",
+                        placeholder: "请输入"
+                    },
+                     {
+                        type:"title",
+                        name:"线条设置",
+                        icon:"el-icon-paperclip"
+                    },
+                    {
+                        type: "select",
+                        value: 1,
+                        options: [1, 2, 3, 4],
+                        lable: "线条粗细",
+                        placeholder: "请选择"
+                    },
+                    {
+                        type: "color",
+                        value: '#EE0E0E',
+                        lable: "线条颜色",
+                    },
+                     {
+                        type: "select",
+                        value: "实线",
+                        options: ['实线', "虚线", "点线"],
+                        lable: "描边样式",
+                        placeholder: "请选择"
+                    },
+                    {
+                        type:"title",
+                        name:"层级设置",
+                        icon:"el-icon-document-copy"
+                    },{
+                        type:"level",
+                        name:"层级设置",
+                        value:[2,8],
+                        max:24,
+                    }
+                ],
                 inputvalue: "12"
             }
         },
@@ -125,27 +187,36 @@
         top: 40px;
         left: 400px;
         width: 260px;
-        min-height: 100%;
+        height: 100%;
         background: #202133;
         overflow-y: auto;
         border-left: 1px solid @borderColor;
     }
+    
+    .map-set::-webkit-scrollbar {
+        display: none;
+    }
     .close-icon {
         position: absolute;
-        top: 12px;
+        top: 0;
         right: 8px;
         color: #fff;
         font-size: 18px;
     }
     .detail-name {
         position: relative;
-        height: 30px;
-        line-height: 30px;
+        height: 18px;
+        line-height: 18px;
         overflow: hidden;
-        padding: 10px;
+        padding-left: 10px;
+        margin-top: 10px;
         span {
             color: #fff;
         }
+    }
+    .padding-style{
+        height: 80px;
+        width: 100%;
     }
 </style>
 

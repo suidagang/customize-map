@@ -2,10 +2,10 @@
     <div class="nav-top">
         <div class="go-back"></div>
         <div class="map-name" v-show="!isEdit">{{name}}</div>
-        <input class="map-name-text" type="text" v-show="isEdit" v-model="name"/>>
+        <input class="map-name-text" type="text" v-show="isEdit" v-model="name"/>
         <div class="icon-style">
-            <i class="el-icon-edit" v-show="!isEdit" @click="showEdit"></i>
-            <i class="el-icon-check" v-show="isEdit" @click="saveName"></i>
+            <i class="el-icon-edit icon-size" v-show="!isEdit" @click="showEdit"></i>
+            <i class="el-icon-check icon-size" v-show="isEdit" @click="saveName"></i>
         </div>
     </div>
 </template>
@@ -73,13 +73,20 @@
         border: 0;
         outline: none;
         margin-top: 8px;
-        font-size: 16px;
+        font-size: 12px;
+        box-sizing: border-box;
+        padding: 0 5px;
     }
     .icon-style{
         float: left;
         color: #676976;
         font-size: 18px;
         margin-left: 12px;
+        vertical-align: middle;
+    }
+    .icon-size{
+        font-size: 16px;
+        cursor: pointer;
     }
 </style>
 
