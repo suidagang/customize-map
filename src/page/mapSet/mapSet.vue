@@ -2,7 +2,7 @@
 	<div class="content">
 		<TopNavBar ref="topNavBar"></TopNavBar>
 		<div class="sidebar-container">
-			<el-menu class="side-bar-box" mode="vertical" :show-timeout="200" background-color="#1c1e2d" text-color="#fff" active-text-color="#555a6e" :unique-opened="true">
+			<el-menu class="side-bar-box" mode="vertical" :show-timeout="200" background-color="#1c1e2d" text-color="#fff" active-text-color="#fff" :unique-opened="true" >
 				<SidebarItem ref="siderBarItem" @openModal="openModal" @openNewLayerModal="openNewLayerModal"></SidebarItem>
 			</el-menu>
 		</div>

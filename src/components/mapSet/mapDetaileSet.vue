@@ -11,6 +11,7 @@
             <SelectSetNew v-if="item.type == 'new'" :objs="item"></SelectSetNew>
             <TitleSet v-if="item.type == 'title'" :objs="item"></TitleSet>
             <LevelSet v-if="item.type == 'level'"  :objs="item"></LevelSet>
+            <UploadImgSet v-if="item.type == 'uploadImg'" :objs="item"></UploadImgSet>
         </div>
     </div>
 </template>
@@ -21,6 +22,7 @@
     import SelectSetNew from "@/components/customizeTemp/selectSetNew.vue"
     import TitleSet from "@/components/customizeTemp/titleSet.vue"
     import LevelSet from "@/components/customizeTemp/levelSet.vue"
+    import UploadImgSet from "@/components/customizeTemp/uploadImgSet.vue"
     export default {
         name: 'map-set',
         components: {
@@ -29,7 +31,8 @@
             ColorSet,
             SelectSetNew,
             TitleSet,
-            LevelSet
+            LevelSet,
+            UploadImgSet
         },
         data() {
             return {
@@ -50,6 +53,11 @@
                     type:"title",
                     name:"图片设置",
                     icon:"el-icon-paperclip"
+                },
+                {
+                    type:"uploadImg",
+                    lable:"图片上传",
+                    value:"投诉点"
                 },
                 {
                     type: "color",
