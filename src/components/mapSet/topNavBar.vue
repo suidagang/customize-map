@@ -1,9 +1,11 @@
 <template>
     <div class="nav-top">
         <div class="go-back"></div>
-        <div class="map-name">我的地图样式1</div>
+        <div class="map-name" v-show="!isEdit">{{name}}</div>
+        <input class="map-name-text" type="text" v-show="isEdit" v-model="name"/>>
         <div class="icon-style">
-            <i class="el-icon-edit"></i>
+            <i class="el-icon-edit" v-show="!isEdit" @click="showEdit"></i>
+            <i class="el-icon-check" v-show="isEdit" @click="saveName"></i>
         </div>
     </div>
 </template>
@@ -15,16 +17,25 @@
         },
         data() {
             return {
+                isEdit:false,
+                name:"我的地图样式1"
             }
         },
         created() {},
         mounted() {},
         methods: {
+            showEdit(){
+                this.isEdit = true;
+            },
+            saveName(){
+                this.isEdit = false;
+            }
         }
     }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+    @import '../../less/variable.less';
     .nav-top{
 		position: fixed;
 		top: 0;
@@ -50,6 +61,19 @@
         float: left;
         color: #fff;
         margin-left: 57px;
+    }
+    .map-name-text{
+        float: left;
+        color: #000;
+        background: #fff;
+        height: 24px;
+        line-height: 24px;
+        width: 142px;
+        margin-left: 57px;
+        border: 0;
+        outline: none;
+        margin-top: 8px;
+        font-size: 16px;
     }
     .icon-style{
         float: left;
