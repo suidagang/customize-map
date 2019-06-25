@@ -6,8 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: {
-        // 将 lodash 模块作为入口编译成动态链接库
-        vendor: ['element-ui','vue/dist/vue.esm.js','vue-router','axios','vuex','moment','qs']
+        //'element-ui'用按需引入方式这里就不打成第三方包了
+        vendor: ['vue/dist/vue.esm.js','vue-router','axios','vuex','moment','qs']
     },
     output: {
         // 指定生成文件所在目录

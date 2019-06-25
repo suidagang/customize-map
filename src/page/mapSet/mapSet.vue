@@ -7,14 +7,7 @@
 			</el-menu>
 		</div>
 		<div class="main-map">
-			<div style="height:200px;width:100%;background:red;"></div>
-			<div style="height:200px;width:100%;background:orange;"></div>
-			<div style="height:200px;width:100%;background:yellow;"></div>
-			<div style="height:200px;width:100%;background:green;"></div>
-			<div style="height:200px;width:100%;background:blue;"></div>
-			<div style="height:200px;width:100%;background:purple;"></div>
-			<div style="height:200px;width:100%;background:pink;"></div>
-			<div style="height:200px;width:100%;background:skyblue;"></div>
+			<MyMap ref="myMap"></MyMap>
 		</div>
 		<NewLayerModal ref="newLayerModal" @sureChoiceTemplate="sureChoiceTemplate"></NewLayerModal>
 		<MapSpecificSettings ref="mapSpecificSettings" @closeSet = "closeSet" @showGroupChioceTem= "showGroupChioceTem" @showSet ="showSet"></MapSpecificSettings>
@@ -30,6 +23,7 @@
 	import MapTemplateGroup from "@/components/mapSet/mapTemplateGroup.vue";
 	import MapDetaileSet from "@/components/mapSet/mapDetaileSet.vue";
 	import TopNavBar from "@/components/mapSet/topNavBar.vue"
+	import MyMap from "@/components/mapSet/myMap.vue"
 	export default {
 		components: {
 			SidebarItem,
@@ -37,7 +31,8 @@
 			MapSpecificSettings,
 			MapTemplateGroup,
 			MapDetaileSet,
-			TopNavBar
+			TopNavBar,
+			MyMap
 		},
 		data() {
 			return {
@@ -75,6 +70,7 @@
 </script>
 
 <style scoped>
+	
 	.head {
 		height: 50px;
 		width: 100%;
@@ -98,10 +94,9 @@
 		display: none;
 	}
 	.main-map {
-		margin-left: 180px;
+		margin-left: 280px;
 		min-height: 100%;
 		z-index: 9999;
-		background: pink;
 		overflow: hidden;
 	}
 	.side-bar-box{

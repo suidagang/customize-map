@@ -35,6 +35,7 @@
 		background: #1c1e2d;
 		border-bottom: 1px solid #fff;
         box-sizing: border-box;
+        z-index: 99;
 	}
 	.go-back{
         position: absolute;
