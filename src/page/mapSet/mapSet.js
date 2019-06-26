@@ -3,6 +3,7 @@ import App from "./mapSet.vue"
 import 'element-ui/lib/theme-chalk/index.css';;
 import "@/less/common.less";
 import "@/less/siderBar.less";
+import "@/less/modal.less"
 //按需引入elementUI的样式
 import {
   Button,

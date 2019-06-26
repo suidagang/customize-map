@@ -1,8 +1,8 @@
 <template>
   <div>
-    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%">
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="800px">
       <el-tree
-      class="filter-tree"
+      class="filter-tree tree-style"
       :data="data"
       :props="defaultProps"
       default-expand-all
@@ -93,5 +93,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='less' scoped>
+   .tree-style{
+     background: #1c1e2d;
+   }
 </style>
