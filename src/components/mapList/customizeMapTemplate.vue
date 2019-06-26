@@ -14,40 +14,27 @@
 </template>
 
 <script>   
+    import config from '@/config/config.js';
     export default {
         name: "customize-map",
         data () {
             return {
-                listData:[{
-                    name:"标准",
-                    img:"",
-                    show:false,
-                },{
-                    name:"标准",
-                    img:"",
-                    show:false,
-                },
-                {
-                    name:"标准",
-                    img:"",
-                    show:false,
-                },{
-                    name:"标准",
-                    img:"",
-                    show:false,
-                },{
-                    name:"标准",
-                    img:"",
-                    show:false,
-                },
-                {
-                    name:"标准",
-                    img:"",
-                    show:false,
-                }]
+                listData:[]
             }
         },
+        mounted(){
+            this.getList();
+        },
         methods: {
+            getList(){
+                this.$get(config.getTempList).then((res)=>{
+                    if(res.code == "200"){
+                        this.listData = res.data;
+                    }
+                }).catch((e)=>{
+                    console.log(e)
+                })
+            },
             showChoiceTem(item){
                 item.show = true;
             },
